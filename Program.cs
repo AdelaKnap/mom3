@@ -7,7 +7,8 @@ namespace mom3
     {
         static void Main(string[] args)
         {
-            WriteLine("Hej!");
+            Guestbook guestbook = new Guestbook();       // Ny instans av gästbok
+
         }
     }
 }
