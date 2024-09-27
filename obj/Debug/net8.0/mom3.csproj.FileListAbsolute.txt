@@ -1,0 +1,14 @@
+C:\Users\adela\OneDrive\Skrivbord\mom3\bin\Debug\net8.0\mom3.exe
+C:\Users\adela\OneDrive\Skrivbord\mom3\bin\Debug\net8.0\mom3.deps.json
+C:\Users\adela\OneDrive\Skrivbord\mom3\bin\Debug\net8.0\mom3.runtimeconfig.json
+C:\Users\adela\OneDrive\Skrivbord\mom3\bin\Debug\net8.0\mom3.dll
+C:\Users\adela\OneDrive\Skrivbord\mom3\bin\Debug\net8.0\mom3.pdb
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.AssemblyInfoInputs.cache
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.AssemblyInfo.cs
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.csproj.CoreCompileInputs.cache
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.dll
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\refint\mom3.dll
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.pdb
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.genruntimeconfig.cache
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\ref\mom3.dll
