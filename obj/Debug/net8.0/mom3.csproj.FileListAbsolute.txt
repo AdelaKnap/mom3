@@ -12,3 +12,4 @@ C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\refint\mom3.dll
 C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.pdb
 C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.genruntimeconfig.cache
 C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\ref\mom3.dll
+C:\Users\adela\OneDrive\Skrivbord\mom3\obj\Debug\net8.0\mom3.sourcelink.json
