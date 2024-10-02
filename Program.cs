@@ -15,16 +15,17 @@ namespace mom3
             while (true)
             {
                 Clear();    // Rensa konsolen
+                CursorVisible = false;  // Dölj markör
                 WriteLine("A D E L A S  G U E S T B O O K\n");
                 WriteLine("1. Create a new entry");
                 WriteLine("2. Delete an entry");
                 WriteLine("X. Exit\n");
-                WriteLine("Current entries in the guestbook:");
+                WriteLine("Current entries:");
 
                 // Skriv ut inläggen
                 guestbook.ShowPosts();
 
-                WriteLine("\nChoose what you want to do: ");
+                WriteLine("\nChoose what you want to do!");
 
 
                 // Användarens val med ReadKey
