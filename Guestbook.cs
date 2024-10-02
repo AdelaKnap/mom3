@@ -62,7 +62,7 @@ namespace mom3
         {
             if (posts.Count == 0)
             {
-                WriteLine("Det finns inga inlägg i gästboken.");
+                WriteLine("There are no entries in the guestbook.");
             }
             else
             {
@@ -77,7 +77,7 @@ namespace mom3
         // Metod för att skriva ut felmeddelande, för att slippa upprepning av detta in program.cs
         public static void ErrorMessage()
         {
-            WriteLine("Felaktig inmatning eller val. Tryck på valfri tangent för att fortsätta!");
+            WriteLine("Invalid input or selection. Press any key to continue!");
             ReadKey();
         }
     }

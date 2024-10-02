@@ -15,16 +15,17 @@ namespace mom3
             while (true)
             {
                 Clear();    // Rensa konsolen
-                WriteLine("A D E L A S  G Ä S T B O K\n");
-                WriteLine("1. Skapa nytt inlägg");
-                WriteLine("2. Ta bort inlägg");
-                WriteLine("X. Avsluta\n");
-                WriteLine("Aktuella inlägg i gästboken:");
+                WriteLine("A D E L A S  G U E S T B O O K\n");
+                WriteLine("1. Create a new entry");
+                WriteLine("2. Delete an entry");
+                WriteLine("X. Exit\n");
+                WriteLine("Current entries in the guestbook:");
 
                 // Skriv ut inläggen
                 guestbook.ShowPosts();
 
-                WriteLine("\nVälj vad du vill göra: ");
+                WriteLine("\nChoose what you want to do: ");
+
 
                 // Användarens val med ReadKey
                 ConsoleKeyInfo keyInfo = ReadKey(true);
@@ -39,24 +40,26 @@ namespace mom3
                         string? inputName;
                         string? inputMessage;
 
-                        Write("Ange ditt namn: ");
+                        Write("Enter your name: ");
 
                         // Kör så länge inte användare anger ett "riktigt" namn och inte null/whitespace
                         while (string.IsNullOrWhiteSpace(inputName = ReadLine()))
                         {
                             Clear();
-                            WriteLine("Du måste ange ett namn. Testa igen!");
-                            Write("Ange ditt namn: ");
+                            WriteLine("You must enter a name. Please try again!");
+                            Write("Enter your name: ");
                         }
 
-                        Write("Skriv in ditt inlägg: ");
+                        Write("Write your entry: ");
+
 
                         // Kör så länge inte användare anger ett "riktigt" inlägg
-                        while (string.IsNullOrWhiteSpace(inputMessage = ReadLine()))     
+                        while (string.IsNullOrWhiteSpace(inputMessage = ReadLine()))
                         {
                             Clear();
-                            WriteLine("Du måste skriva ett inlägg. Testa igen!");
-                            Write("Skriv in ditt inlägg: ");
+                            WriteLine("You must write an entry. Please try again!");
+                            Write("Write your entry: ");
+
                         }
 
                         // Kör metoden för att skapa och spara 
@@ -73,14 +76,14 @@ namespace mom3
                         // Kontroll om inga inlägg finns 
                         if (guestbook.GetPosts().Count == 0)
                         {
-                            WriteLine("Tryck på valfri tangent för att återgå till menyn.");
+                            WriteLine("Press any key to return to the menu.");
                             ReadKey();
                             break;
                         }
 
                         while (true) // Fortsätt tills giltig index
                         {
-                            Write("\nAnge index att radera: ");
+                            Write("\nEnter the index to delete: ");
 
                             if (int.TryParse(ReadLine(), out int index))
                             {
@@ -94,14 +97,14 @@ namespace mom3
                                     }
                                     catch (Exception)
                                     {
-                                        WriteLine("Ett fel inträffade. Tryck på valfri knapp för att fortsätta.");
+                                        WriteLine("An error occurred. Press any key to continue.");
                                         ReadKey();
                                         break;
                                     }
                                 }
                                 else
                                 {
-                                    WriteLine("Felaktigt index, testa igen!");
+                                    WriteLine("Invalid index, please try again!");
                                 }
                             }
                             else
