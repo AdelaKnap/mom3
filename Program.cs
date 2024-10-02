@@ -1,4 +1,5 @@
 ﻿/* DT071G Moment 3. En konsolapplikation för en gästbok. Av Adela Knap */
+
 using static System.Console;  // För att slippa skriva Console framför Write/WriteLine
 
 namespace mom3
@@ -23,52 +24,59 @@ namespace mom3
                 // Skriv ut inläggen
                 guestbook.ShowPosts();
 
-                Write("\nVälj vad du vill göra: ");
+                WriteLine("\nVälj vad du vill göra: ");
 
-                // Användarens val
-                string? choice = ReadLine();
-
-                if (string.IsNullOrWhiteSpace(choice))  // Kontroll för null eller tom inmatning
-                {
-                    WriteLine("Felaktigt val. Tryck på valfri tangent för att testa igen!");
-                    ReadKey();
-                    continue;      // Fortsätt loopen om det är fel inmatning
-                }
+                // Användarens val med ReadKey
+                ConsoleKeyInfo keyInfo = ReadKey(true);
+                char choice = keyInfo.KeyChar;
 
                 // Switch-sats för de olika valen
-                switch (choice.ToLower())
+                switch (char.ToLower(choice))
                 {
-                    case "1":
-                        Clear();       // Rensa konsolen
+                    case '1':
+                        Clear();     // Rensa konsolen
 
                         string? inputName;
                         string? inputMessage;
 
                         Write("Ange ditt namn: ");
 
-                        // Kör så länge inte användare anger ett "riktigt" namn
+                        // Kör så länge inte användare anger ett "riktigt" namn och inte null/whitespace
                         while (string.IsNullOrWhiteSpace(inputName = ReadLine()))
                         {
-                            WriteLine("Det blev något fel, du måste ange ett namn. Testa igen!");
+                            Clear();
+                            WriteLine("Du måste ange ett namn. Testa igen!");
                             Write("Ange ditt namn: ");
                         }
 
                         Write("Skriv in ditt inlägg: ");
-                        while (string.IsNullOrWhiteSpace(inputMessage = ReadLine()))     // Kör så länge inte användare anger ett "riktigt" inlägg
+
+                        // Kör så länge inte användare anger ett "riktigt" inlägg
+                        while (string.IsNullOrWhiteSpace(inputMessage = ReadLine()))     
                         {
-                            WriteLine("Det blev något fel, du måste skriva ett inlägg. Testa igen!");
+                            Clear();
+                            WriteLine("Du måste skriva ett inlägg. Testa igen!");
                             Write("Skriv in ditt inlägg: ");
                         }
 
-                        // Kör metoden för att skapa och spara
+                        // Kör metoden för att skapa och spara 
                         guestbook.AddPost(inputName, inputMessage);
+
                         break;
 
-                    case "2":
+                    case '2':
                         Clear();
 
-                        // Skriv ut alla inlägg för användaren ska kunna välja vilket att ta bort
+                        // Skriv ut alla inlägg för användaren ska kunna välja vilket som ska tas bort
                         guestbook.ShowPosts();
+
+                        // Kontroll om inga inlägg finns 
+                        if (guestbook.GetPosts().Count == 0)
+                        {
+                            WriteLine("Tryck på valfri tangent för att återgå till menyn.");
+                            ReadKey();
+                            break;
+                        }
 
                         while (true) // Fortsätt tills giltig index
                         {
@@ -82,37 +90,34 @@ namespace mom3
                                     try
                                     {
                                         guestbook.DeletePost(index);  // Ta bort inlägget
-                                        WriteLine("Inlägget har tagits bort. Tryck på valfri knapp för att återgå till menyn.");
-                                        ReadKey();
                                         break;
                                     }
                                     catch (Exception)
                                     {
                                         WriteLine("Ett fel inträffade. Tryck på valfri knapp för att fortsätta.");
                                         ReadKey();
-                                        break; // Avsluta loopen vid fel
+                                        break;
                                     }
                                 }
                                 else
                                 {
-                                    WriteLine("Felaktigt val av index! Testa igen.");
+                                    WriteLine("Felaktigt index, testa igen!");
                                 }
                             }
                             else
                             {
-                                WriteLine("Felaktigt val av index! Testa igen.");
+                                Guestbook.ErrorMessage();
                             }
                         }
                         break;
 
-                    case "x":
+                    case 'x':
                         Clear();
                         Environment.Exit(0);    // Avsluta programmet
                         break;
 
                     default:
-                        WriteLine("Felaktigt val. Tryck på valfri tangent för att testa igen!");
-                        ReadKey();
+                        Guestbook.ErrorMessage();
                         break;
                 }
             }
